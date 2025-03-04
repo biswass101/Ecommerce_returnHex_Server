@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const createHttpError = require('http-errors');
 const globalErrorHandler = require('./middlewares/globalErrorHandler');
 const app = express()
@@ -6,6 +7,7 @@ const app = express()
 //Express Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
+app.use(cors())
 
 //Root EndPoints
 app.get('/', (req, res) => {

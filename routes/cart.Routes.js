@@ -8,4 +8,7 @@ router.post('/', addToCart)
 //DELETE: Delete Cart
 router.delete('/:id', deleteCart)
 
+//GET: get carts
+router.get('/')
+
 module.exports = router

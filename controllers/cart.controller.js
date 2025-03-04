@@ -21,7 +21,7 @@ const addToCart = async (req, res, next) => {
         res.status(201).json({
             success: true,
             message: "Added to cart",
-            data: prodInfo
+            data: newProdCart
         })
     } catch (error) {
         next(error)
@@ -40,6 +40,25 @@ const deleteCart = async (req, res, next) => {
         res.status(200).json({
             success: true,
             message: "Cart Deleted",
+            data: getCart
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
+//get carts
+const getCarts = async (req, res, next) => {
+    try {
+        const getCart = await Cart.findById(req.params.id)
+        if(!getCart) {
+            const error = createHttpError(404, "Cart Not Found!")
+            return next(error)
+        }
+
+        res.status(200).json({
+            success: true,
+            messagge: 'Cart Found',
             data: getCart
         })
     } catch (error) {
