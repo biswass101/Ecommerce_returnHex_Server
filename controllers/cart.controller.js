@@ -1,7 +1,6 @@
 const createHttpError = require("http-errors")
 const Cart = require("../models/cart.model")
 
-
 //add cart
 const addToCart = async (req, res, next) => {
     try {
