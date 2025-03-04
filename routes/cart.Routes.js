@@ -1,5 +1,4 @@
 const { addToCart, deleteCart } = require('../controllers/cart.controller');
-
 const router = require('express').Router();
 
 //POST: Add Cart
